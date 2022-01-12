@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  
+<!--   修改js css 为本站内容 -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
+  <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script> -->
+  
+  <link rel="stylesheet" href="./_js_css_img/_vue.css">
+  <link rel="stylesheet" href="./_js_css_img/_mermaid.min.css">
+  <script src="./_js_css_img/_mermaid.min.js"></script>
+</head>
+<body>
+  <div id="app">载入中...</div>
+  <script>
+    var num = 0;
+    mermaid.initialize({ startOnLoad: false });
+    
+    window.$docsify = {
+      //...
+
+      search: {
+      maxAge: 3000, // 过期时间，单位毫秒，默认一天 86400000 毫秒
+      paths: ['/',
+              '/readme',
+              '/_md/编程部分',
+              '/_md/电脑硬件',
+              '/_md/网络常识',
+              '/_md/课堂讲解'], // or 'auto' auto 只搜索根目录下
+      placeholder: ' 快速搜索 ',
+      noData: '未找到!'
+      }, 
+      coverpage: true,
+      name: '我的知识库 Ver:1.0',
+      el: '#app',
+      markdown: {
+        renderer: {
+          code: function(code, lang) {
+            if (lang === "mermaid") {
+              return (
+                '<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + "</div>"
+              );
+            }
+            return this.origin.code.apply(this, arguments);
+          }
+        }
+      }
+      
+      
+    }
+  </script>
+  
+  <!-- 修改js css 为本站内容 -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1.26.0/components/prism-python.js"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script> -->
+  
+  <script src="./_js_css_img/_docsify.min.js"></script>
+  <script src="./_js_css_img/_docsify-copy-code.min.js"></script>
+  <script src="./_js_css_img/_prism-python.js"></script>
+  <script src="./_js_css_img/_search.min.js"></script>
+  
+</body>
+</html>

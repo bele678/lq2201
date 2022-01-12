@@ -4,7 +4,7 @@
 
 
 [练习题](https://bele678.github.io/lq)
-[笔记内容](#readme\?id\=首页)
+[笔记内容](#首页)
 [Online Codeing](https://bele678.github.io/lq2201/_web_py3/)
 
 

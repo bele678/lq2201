@@ -24,7 +24,7 @@
       //...
 
       search: {
-      maxAge: 300000, // 过期时间，单位毫秒，默认一天 86400000 毫秒
+      maxAge: 60000, // 过期时间，单位毫秒，默认一天 86400000 毫秒
       paths: ['/',
               '/README',
               '/_md/编程部分',
@@ -32,7 +32,10 @@
               '/_md/网络常识',
               '/_md/课堂讲解'], // or 'auto' auto 只搜索根目录下
       placeholder: ' 快速搜索 ',
-      noData: '未找到!'
+      noData: '未找到!',
+      
+      // 搜索最大层级  1 ~ 6
+      depth: 6
       }, 
       coverpage: true,
       name: '我的知识库 Ver:1.0',
